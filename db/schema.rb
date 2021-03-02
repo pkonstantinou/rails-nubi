@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_03_02_122014) do
 
   create_table "tracks", force: :cascade do |t|
     t.string "title"
-    t.boolean "is_global"
+    t.boolean "is_global", default: false
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
