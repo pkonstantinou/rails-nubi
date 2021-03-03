@@ -7,8 +7,8 @@
 
   <ul>
     <% @track.steps.each do |step| %>
-      <!-- <li><%= link_to step.title, edit_step_path(step) %> </li> -->
-      <p><%= link_to 'Delete', step_path(step), method: :delete, data: {confirm: 'Are you sure?'} %></p>
+      <p><%= step.title %></p>
+      <p><%= link_to 'Delete', track_step_path(@track, step), method: :delete, data: {confirm: 'Are you sure?'} %></p>
     <% end %>
   </ul>
 
