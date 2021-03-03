@@ -1,10 +1,19 @@
 .navbar-lewagon {
   background-color: $theme-color2;
   justify-content: space-between;
-  padding: 0.5rem 1.5rem;
+  padding: 0;
+  padding-right: 1.5rem;
 
   .navbar-collapse {
     flex-grow: 0;
+  }
+
+  .navbar-brand {
+    background-color: $theme-color1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.9rem 1.5rem;
   }
 
   .navbar-brand img {
@@ -27,6 +36,11 @@
     font-size: 1.3rem;
   }
 
+  .navbar-toggler i {
+    color: $white;
+    font-size: 1.5rem;
+  }
+
   .nav-btn-dashboard {
     font-weight: 500;
     background-color: rgba(255, 255, 255, 0.1);
@@ -47,9 +61,8 @@
   left: 0;
   width: 100%;
 
-  .navbar-toggler i {
-    color: $white;
-    font-size: 1.8rem;
+  .navbar-brand {
+    background-color: transparent;
   }
 
   .nav-link {
