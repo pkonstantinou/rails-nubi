@@ -14,28 +14,41 @@
   align-items: center;
   padding: 1.8rem 0rem;
 
-  .dashboard-sidebar__items {
+  .nav-tabs {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .dashboard-sidebar__item {
+  .nav-item {
     margin-bottom: 2.5rem;
     position: relative;
-    cursor: pointer;
 
-    &:hover .dashboard-sidebar__item__label {
+    &:hover .nav-label {
       opacity: 1;
+      visibility: visible;
     }
   }
 
-  .dashboard-sidebar__item:last-of-type {
-    margin-bottom: 0;
+  #settings-tab {
+    margin-top: 8rem;
   }
 
-  .dashboard-sidebar__item.active i {
+  ul.nav {
+    border-color: transparent;
+  }
+
+  .nav-link:hover {
+    border-color: transparent;
+  }
+
+  .nav-link.active {
+    background-color: inherit;
+    border-color: transparent;
+  }
+
+  .nav-link.active i {
     color: $white;
   }
 
@@ -44,18 +57,19 @@
     font-size: 1.3rem;
   }
 
-  .dashboard-sidebar__item__label {
+  .nav-label {
     padding: 0.5rem 1.5rem;
-    background-color: $nubi-background;
+    background-color: rgba(255, 255, 255, 0.8);
     font-size: 0.9rem;
     white-space: nowrap;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    visibility: hidden;
+    transition: all 0.3s ease;
     position: absolute;
-    top: -10px;
-    left: 40px;
+    bottom: 5px;
+    left: 50px;
     display: flex;
     justify-content: center;
     align-items: center;

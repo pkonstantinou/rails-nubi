@@ -38,6 +38,10 @@
 
   .fa-power-off {
     font-size: 1.3rem;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.4);
+    }
   }
 
   .navbar-toggler i {
