@@ -1,4 +1,5 @@
 .navbar-lewagon {
+  background-color: $theme-color2;
   justify-content: space-between;
   padding: 0.5rem 1.5rem;
 
@@ -7,23 +8,23 @@
   }
 
   .navbar-brand img {
-    width: 40px;
+    width: 35px;
   }
 
-  .navbar-toggler i {
-    color: $white;
-    font-size: 1.8rem;
+  .nav-item {
+    vertical-align: middle;
   }
 
-  &.navbar-home {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  &.navbar-home .nav-link {
+  .nav-link {
     color: $white !important;
+  }
+
+  .nav-link__username {
+    font-size: 0.9rem;
+  }
+
+  .fa-power-off {
+    font-size: 1.3rem;
   }
 
   .nav-btn-dashboard {
@@ -36,5 +37,22 @@
     &:hover {
       background-color: rgba(255, 255, 255, 0.15);
     }
+  }
+}
+
+.navbar-lewagon.navbar-home {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  .navbar-toggler i {
+    color: $white;
+    font-size: 1.8rem;
+  }
+
+  .nav-link {
+    color: $white !important;
   }
 }

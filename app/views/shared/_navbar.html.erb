@@ -16,10 +16,12 @@
           </li>
         <% else %>
           <li class="nav-item">
-          <span class="nav-link"><%= "#{current_user.first_name} #{current_user.last_name}" %></span>
+          <span class="nav-link nav-link__username"><%= "#{current_user.first_name} #{current_user.last_name}" %></span>
           </li>
           <li class="nav-item">
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
+          <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+            <i class="fas fa-power-off"></i>
+          <% end %>
           </li>
         <% end %>
       <% else %>
