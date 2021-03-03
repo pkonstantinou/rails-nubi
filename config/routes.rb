@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get '/dashboard' => "pages#dashboard", :as => :user_root
   root to: 'pages#home'
   get '/dashboard', to: 'pages#dashboard'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  resources :tracks, only: %i[index show create destroy] # , :show, :create
+  resources :tracks, except: %i[show] do
+    resources :steps, only: %i[create destroy]
+  end
+  # resources :steps, only: %i[create]
 end

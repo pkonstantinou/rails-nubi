@@ -1,0 +1,29 @@
+<div class="container">
+  <% if policy(Track).edit? && policy(Step).edit? %>
+    <h2><%= @track.title %></h2>
+    <h4>Your steps</h4>
+      <ul>
+        <% @track.steps.each do |step| %>
+          <div class="card" id="my-bookings-card">
+            <div class="card-body d-flex flex-column justify-content-between align-items-center">
+              <p>Title: <%= step.title %></p>
+              <p>Description: <%= step.description %></p>
+              <p>Content type: <%= step.content_type %></p>
+              <p><%= link_to 'Delete', track_step_path(@track, step), method: :delete, data: {confirm: 'Are you sure?'} %></p>
+            </div>
+          </div>
+        <% end %>
+      </ul>
+      <h3>Add a new step</h3>
+      <% if policy(Step).create? %>
+        <%= simple_form_for [@track, @step] do |f| %>
+          <%= f.input :title, input_html: { maxlength: '18' } %>
+          <%= f.input :description %>
+          <%= f.input :content_type, collection: ['Image', 'Video', 'PDF', 'PowerPoint', 'Text file'] %>
+          <%= f.button :submit, 'Add a step' %>
+        <% end %>
+      <% end %>
+  <% else %>
+    <p>You can't edit this!</p>
+  <% end %>
+</div>

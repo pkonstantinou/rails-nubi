@@ -1,16 +1,8 @@
-class TrackPolicy < ApplicationPolicy
+class StepPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
       scope.all
     end
-  end
-
-  def show?
-    true
-  end
-
-  def create?
-    true
   end
 
   def destroy?
@@ -18,7 +10,12 @@ class TrackPolicy < ApplicationPolicy
     # record.user == user
   end
 
-  def update?
+  def create?
+    true
+    # record.user == user
+  end
+
+  def edit?
     true
     # record.user == user
   end

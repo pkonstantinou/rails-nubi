@@ -29,6 +29,10 @@ step3.track = t1
 step3.save
 
 t1.save
+t2.save
+t3.save
+t4.save
+t5.save
 
 a1 = Assignment.new
 a1.track = t1
