@@ -1,7 +1,7 @@
 <h3>Here are all your tracks</h3>
 <% @tracks.each do |track| %> 
   <p>
-    <%= link_to track.title, track_path(track) %>
+    <%= link_to track.title, edit_track_path(track) %>
     <%= link_to 'Delete', track_path(track), method: :delete, data: {confirm: 'Are you sure?'} %>
   </p>
 <% end %>

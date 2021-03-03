@@ -1,17 +1,14 @@
 class TracksController < ApplicationController
-  before_action :set_track, only: %i[show destroy edit] # :update
+  before_action :set_track, only: %i[destroy edit] # :update
 
   def index
     @tracks = policy_scope(Track)
     @track = Track.new
   end
 
-  def show
-    authorize @track
-  end
-
   def edit
     authorize @track
+    @step = Step.new
   end
 
   def update
