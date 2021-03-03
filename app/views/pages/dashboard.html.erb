@@ -1,4 +1,34 @@
 <%= render 'shared/navbar', is_home: false %>
 
-<h1>Dashboard</h1>
-<div style="width: 100%; height:200vh;"></div>
+<div class="dashboard-container">
+  <div class="dashboard-sidebar">
+    <div class="dashboard-sidebar__items">
+      <div class="dashboard-sidebar__item active">
+        <i class="fab fa-servicestack"></i>
+        <div class="dashboard-sidebar__item__label">My Tracks</div>
+      </div>
+      <div class="dashboard-sidebar__item">
+        <i class="fas fa-book"></i>
+        <div class="dashboard-sidebar__item__label">Track Library</div>
+      </div>
+      <div class="dashboard-sidebar__item">
+        <i class="fas fa-users"></i>
+        <div class="dashboard-sidebar__item__label">Team</div>
+      </div>
+      <div class="dashboard-sidebar__item">
+        <i class="fas fa-user-alt"></i>
+        <div class="dashboard-sidebar__item__label">Profile</div>
+      </div>
+    </div>
+    <div class="dashboard-sidebar__settings">
+      <div class="dashboard-sidebar__item">
+        <i class="fas fa-cog"></i>
+        <div class="dashboard-sidebar__item__label">Settings</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="dashboard-main">
+  
+  </div>
+</div>

@@ -1,4 +1,8 @@
 .navbar-lewagon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: $theme-color2;
   justify-content: space-between;
   padding: 0;
@@ -13,7 +17,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0.9rem 1.5rem;
+    padding: 0.9rem 1.4rem;
   }
 
   .navbar-brand img {
@@ -56,10 +60,6 @@
 
 .navbar-lewagon.navbar-home {
   background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
 
   .navbar-brand {
     background-color: transparent;
