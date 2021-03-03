@@ -1,1 +1,10 @@
-<%= @track %>
+<h2><%= @track.title %></h2>
+<h4>Here are all the steps in this track:</h4>
+
+<ul>
+  <% @track.steps.each do |step| %>
+    <li><%= step.title %> </li>
+  <% end %>
+</ul>
+<p><%= link_to 'Delete', track_path(@track), method: :delete, data: {confirm: 'Are you sure?'} %></p>
+<p><%= link_to 'Go to edit mode', edit_track_path(@track) %></p>

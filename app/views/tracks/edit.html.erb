@@ -1,0 +1,17 @@
+<% if policy(Track).edit? %>
+
+  <%= simple_form_for(@track) do |f| %>
+    <%= f.input :title, input_html: { maxlength: '18' } %>
+    <%= f.button :submit, "Save changes" %>
+  <% end %>
+
+  <ul>
+    <% @track.steps.each do |step| %>
+      <!-- <li><%= link_to step.title, edit_step_path(step) %> </li> -->
+      <p><%= link_to 'Delete', step_path(step), method: :delete, data: {confirm: 'Are you sure?'} %></p>
+    <% end %>
+  </ul>
+
+<% else %>
+  <p>You can't edit this!</p>
+<% end %>
