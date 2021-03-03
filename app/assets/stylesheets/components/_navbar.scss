@@ -1,16 +1,75 @@
 .navbar-lewagon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: $theme-color2;
   justify-content: space-between;
-  padding: 0.5rem 1.5rem;
+  padding: 0;
+  padding-right: 1.5rem;
 
   .navbar-collapse {
     flex-grow: 0;
   }
 
-  .navbar-brand img {
-    width: 40px;
+  .navbar-brand {
+    background-color: $theme-color1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.9rem 1.4rem;
   }
 
-  &.navbar-home .nav-link {
+  .navbar-brand img {
+    width: 35px;
+  }
+
+  .nav-item {
+    vertical-align: middle;
+  }
+
+  .nav-link {
+    color: $white !important;
+  }
+
+  .nav-link__username {
+    font-size: 0.9rem;
+  }
+
+  .fa-power-off {
+    font-size: 1.3rem;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.4);
+    }
+  }
+
+  .navbar-toggler i {
+    color: $white;
+    font-size: 1.5rem;
+  }
+
+  .nav-btn-dashboard {
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+  }
+}
+
+.navbar-lewagon.navbar-home {
+  background-color: transparent;
+
+  .navbar-brand {
+    background-color: transparent;
+  }
+
+  .nav-link {
     color: $white !important;
   }
 }
