@@ -7,8 +7,16 @@ u2 = User.new(email: 'u2@mail.com', password: '123456')
 u2.manager = u1
 u2.save
 
-t1 = Track.new(title: 'Track 1')
+t1 = Track.new(title: 'Code of Conduct training')
 t1.user = u1
+t2 = Track.new(title: 'Junior Software Engineer')
+t2.user = u1
+t3 = Track.new(title: 'New manager training')
+t3.user = u1
+t4 = Track.new(title: 'Presentations skill')
+t4.user = u1
+t5 = Track.new(title: 'Sales strategy')
+t5.user = u1
 
 step1 = Step.new(title: 'Step 1', content_type: 'audio')
 step1.track = t1
