@@ -1,1 +1,10 @@
-<h1>Settings</h1>
+<%= render 'shared/navbar', is_home: false %>
+
+<div class="dashboard-container">
+  <div class="dashboard-sidebar">
+    <%= render 'sidebar', tab: 'settings' %>
+  </div>
+  <div class="dashboard-main">
+   <h2>Settings</h2>
+  </div>
+</div>

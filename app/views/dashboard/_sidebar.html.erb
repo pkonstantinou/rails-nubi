@@ -1,0 +1,32 @@
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <%= link_to dashboard_my_tracks_path, class: "nav-link #{tab == 'my-tracks' ? 'active' : ''}" do %>
+      <i class="fas fa-poll"></i>
+    <% end %>
+    <div class="nav-label">My Tracks</div>
+  </li>
+  <li class="nav-item">
+    <%= link_to dashboard_track_library_path, class: "nav-link #{tab == 'track-library' ? 'active' : ''}" do %>
+      <i class="fab fa-hive"></i>
+    <% end %>
+    <div class="nav-label">Track Library</div>
+  </li>
+  <li class="nav-item">
+    <%= link_to dashboard_team_path, class: "nav-link #{tab == 'team' ? 'active' : ''}" do %>
+      <i class="fas fa-users"></i>
+    <% end %>
+    <div class="nav-label">Team</div>
+  </li>
+  <li class="nav-item">
+    <%= link_to dashboard_profile_path, class: "nav-link #{tab == 'profile' ? 'active' : ''}" do %>
+      <i class="fas fa-user-alt"></i>
+    <% end %>
+    <div class="nav-label">Profile</div>
+  </li>
+  <li class="nav-item">
+    <%= link_to dashboard_settings_path, class: "nav-link #{tab == 'settings' ? 'active' : ''}" do %>
+      <i class="fas fa-cog"></i>
+    <% end %>
+    <div class="nav-label">Settings</div>
+  </li>
+</ul>
