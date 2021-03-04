@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   get '/dashboard/my-tracks' => "dashboard#my_tracks", :as => :user_root
   root to: 'pages#home'
-  get '/dashboard', to: 'pages#dashboard'
   get '/dashboard/my-tracks', to: 'dashboard#my_tracks'
   get '/dashboard/track-library', to: 'dashboard#track_library'
   get '/dashboard/team', to: 'dashboard#team'
