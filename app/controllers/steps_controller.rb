@@ -12,6 +12,7 @@ class StepsController < ApplicationController
   def destroy
     authorize @step
     @track = Track.find(params[:track_id])
+    @step.media.purge if @step.media.attached?
     @step.destroy
 
     render "tracks/edit"
@@ -24,7 +25,6 @@ class StepsController < ApplicationController
   end
 
   def step_params
-    params.require(:step).permit(:title, :description, :content_type)
+    params.require(:step).permit(:title, :description, :content_type, :media)
   end
-
 end
