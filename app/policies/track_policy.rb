@@ -18,7 +18,6 @@ class TrackPolicy < ApplicationPolicy
   end
 
   def update?
-    true
-    # record.user == user
+    record.user == user
   end
 end

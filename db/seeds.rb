@@ -14,9 +14,9 @@ t2.user = u1
 t3 = Track.new(title: 'New manager training')
 t3.user = u1
 t4 = Track.new(title: 'Presentations skill')
-t4.user = u1
+t4.user = u2
 t5 = Track.new(title: 'Sales strategy')
-t5.user = u1
+t5.user = u2
 
 step1 = Step.new(title: 'Step 1', content_type: 'audio')
 step1.track = t1

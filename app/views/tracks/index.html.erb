@@ -1,17 +1,27 @@
-<h3>Here are all your tracks</h3>
-<% @tracks.each do |track| %> 
-  <p>
-    <%= link_to track.title, edit_track_path(track) %>
-    <% if policy(track).destroy? %>
-      <%= link_to 'Delete', track_path(track), method: :delete, data: {confirm: 'Are you sure?'} %>
-    <% end %>
-  </p>
-<% end %>
-
-<h3>Create a new track</h3>
-<% if policy(Track).create? %>
-  <%= simple_form_for(@track) do |f| %>
-    <%= f.input :title, input_html: { maxlength: '18' } %>
-    <%= f.button :submit %>
+<div class="container">
+  <h4>Tracks you created</h4>
+  <% @tracks.where(user: current_user).each do |track| %> 
+    <p>
+      <%= track.title %>
+      <% if policy(track).update? %>
+        <%= link_to 'Edit', edit_track_path(track) %>
+      <% end %>  
+      <% if policy(track).destroy? %>
+        <%= link_to 'Delete', track_path(track), method: :delete, data: {confirm: 'Are you sure?'} %>
+      <% end %>
+    </p>
   <% end %>
-<% end %>
+
+  <h4>Tracks others created</h4>
+  <% @tracks.where.not(user: current_user).each do |track| %> 
+    <p><%= track.title %></p>
+  <% end %>
+
+  <h4>Create a new track</h4>
+  <% if policy(Track).create? %>
+    <%= simple_form_for(@track) do |f| %>
+      <%= f.input :title, input_html: { maxlength: '18' } %>
+      <%= f.button :submit, class: 'btn-primary' %>
+    <% end %>
+  <% end %>
+</div>
