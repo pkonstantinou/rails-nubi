@@ -23,17 +23,9 @@ require("channels");
 // External imports
 import "bootstrap";
 
-// Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+// Internal imports
+import { initTransitions } from "../components/initTransitions";
 
 document.addEventListener("turbolinks:load", () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-});
-
-// The 'preload' class was set to the body so that we can prevent
-// the transition at the page load. However, after page load we
-// bring the transitions back by removing that class from the body.
-window.addEventListener("load", () => {
-  document.querySelector("body").classList.remove("preload");
+  initTransitions();
 });
