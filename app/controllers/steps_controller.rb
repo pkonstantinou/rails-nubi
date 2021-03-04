@@ -5,8 +5,11 @@ class StepsController < ApplicationController
     authorize @step = Step.new(step_params)
     @track = Track.find(params[:track_id])
     @step.track = @track
-    @step.save
-    redirect_to edit_track_path(@track)
+    if @step.save
+      redirect_to edit_track_path(@track)
+    else
+      render "tracks/edit"
+    end
   end
 
   def destroy
