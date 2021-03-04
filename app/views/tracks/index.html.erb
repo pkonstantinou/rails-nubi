@@ -2,7 +2,9 @@
 <% @tracks.each do |track| %> 
   <p>
     <%= link_to track.title, edit_track_path(track) %>
-    <%= link_to 'Delete', track_path(track), method: :delete, data: {confirm: 'Are you sure?'} %>
+    <% if policy(track).destroy? %>
+      <%= link_to 'Delete', track_path(track), method: :delete, data: {confirm: 'Are you sure?'} %>
+    <% end %>
   </p>
 <% end %>
 

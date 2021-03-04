@@ -14,8 +14,7 @@ class TrackPolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
-    # record.user == user
+    record.user == user
   end
 
   def update?
