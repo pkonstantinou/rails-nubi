@@ -5,7 +5,30 @@
     <%= render 'dashboard/sidebar', tab: 'track-library' %>
   </div>
   <div class="dashboard-main">
-    <div class="container">
+
+    <!-- Button for Modal -->
+    <button type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#exampleModal">Create track</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <strong class="modal-title" id="exampleModalLabel">Name your track</strong>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= simple_form_for(@track) do |f| %>
+              <%= f.input :title, input_html: { maxlength: '18'}, label: false %>
+              <%= f.button :submit, "Save track", id: 'create-text' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <h4>Tracks you created</h4>
     <div class="row mb-3">
       <% @tracks.where(user: current_user).each do |track| %>
@@ -32,14 +55,5 @@
         </div>
       <% end %>
     </div>
-
-    <div class="container w-60">
-      <h4>Add a track</h4>
-      <%= simple_form_for(@track) do |f| %>
-        <%= f.input :title, input_html: { maxlength: '18'}%>
-        <%= f.button :submit, id: 'create-text' %>
-      <% end %>
-    </div>
-  </div>
   </div>
 </div>
