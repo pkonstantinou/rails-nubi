@@ -23,12 +23,12 @@ class TracksController < ApplicationController
 
   def create
     authorize @track = Track.new(track_params)
+    @tracks = policy_scope(Track)
     @track.user = current_user
     if @track.save
-      redirect_to track_path(@track)
-    else
       redirect_to tracks_path
-      # render "index"
+    else
+      render "index"
     end
   end
 
