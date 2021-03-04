@@ -1,5 +1,5 @@
 class TracksController < ApplicationController
-  before_action :set_track, only: %i[destroy edit] # :update
+  before_action :set_track, only: %i[destroy edit update]
 
   def index
     @tracks = policy_scope(Track)
@@ -16,8 +16,7 @@ class TracksController < ApplicationController
     if @track.save
       redirect_to track_path(@track)
     else
-      redirect_to tracks_path
-      # render "index"
+      render "index"
     end
   end
 
@@ -36,9 +35,7 @@ class TracksController < ApplicationController
     authorize @track
     # @track.photos.purge if @track.photos.attached?
     @track.destroy
-
     redirect_to tracks_path
-    # render "index"
   end
 
   private

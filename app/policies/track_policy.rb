@@ -14,12 +14,12 @@ class TrackPolicy < ApplicationPolicy
   end
 
   def destroy?
-    true
-    # record.user == user
+    record.user == user
   end
 
   def update?
     true
+    # For some reason record.user == user is not working, record does not have method user?
     # record.user == user
   end
 end
