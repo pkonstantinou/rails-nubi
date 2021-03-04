@@ -6,10 +6,6 @@ class DashboardControllerPolicy
     @ctrlr = ctrlr
   end
 
-  def track_library?
-    true
-  end
-
   def team?
     true
   end

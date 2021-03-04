@@ -25,17 +25,16 @@ class TracksController < ApplicationController
     @tracks = policy_scope(Track)
     @track.user = current_user
     if @track.save
-      redirect_to tracks_path
+      redirect_to dashboard_track_library_path
     else
-      render "index"
+      render "dashboard/track_library"
     end
   end
 
   def destroy
     authorize @track
-    # @track.photos.purge if @track.photos.attached?
     @track.destroy
-    redirect_to tracks_path
+    redirect_to dashboard_track_library_path
   end
 
   private
@@ -47,5 +46,4 @@ class TracksController < ApplicationController
   def track_params
     params.require(:track).permit(:title, :is_global)
   end
-
 end
