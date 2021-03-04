@@ -1,7 +1,7 @@
 .card {
   height: auto;
   width: 250px;
-  background-color: white ;
+  background-color: white;
   border: none;
   border-radius: 5px;
   padding: 5px;
@@ -9,7 +9,7 @@
   color: $black;
 }
 
-.step-card {
+.card.step-card {
   width: 500px;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .create-card {
-  background-color: lightgreen ;
+  background-color: lightgreen;
 }
 
 
