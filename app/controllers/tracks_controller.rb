@@ -2,8 +2,6 @@ class TracksController < ApplicationController
   before_action :set_track, only: %i[destroy edit update]
 
   def index
-    # @your_tracks = policy_scope(Track).where(user: current_user)
-    # @other_tracks = policy_scope(Track).where.not(user: current_user)
     @tracks = policy_scope(Track)
     @track = Track.new
   end
