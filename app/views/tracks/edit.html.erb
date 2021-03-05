@@ -9,9 +9,11 @@
         <% if step.media.attached? %>
           <%= media_link step %>
         <% else %>
-          <p>You have not provided a file</p>
+          <p>No file attached</p>
         <% end %>
-        <p><%= link_to 'Delete', track_step_path(@track, step), method: :delete, data: {confirm: 'Are you sure?'}, id: 'delete-text'  %></p>
+        <%= link_to track_step_path(@track, step), class: "link-styling", method: :delete, data: {confirm: 'Are you sure?'} do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
       </div>
     </div>
   <% end %>
