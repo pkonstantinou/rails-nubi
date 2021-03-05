@@ -11,10 +11,6 @@
   position: relative;
   background-color: $white;
   overflow-y: scroll;
-
-  .btn-dashboard-1 {
-    position: fixed;
-  }
 }
 
 .dashboard-sidebar {
@@ -103,4 +99,12 @@
 .link-styling:hover {
   text-decoration: none;
   color: rgb(80, 80, 80);
+}
+
+.btn-back {
+  position: fixed;
+}
+
+.btn-add-step {
+  cursor: pointer;
 }
