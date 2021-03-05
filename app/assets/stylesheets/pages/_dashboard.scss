@@ -10,15 +10,14 @@
   padding: 2rem;
   position: relative;
   background-color: $white;
+  overflow-y: scroll;
 
   .btn-back {
     width: 40px;
     height: 40px;
     border-radius: 5px;
     background-color: $theme-color3;
-    position: absolute;
-    top: 30px;
-    left: 30px;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
