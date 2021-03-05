@@ -12,12 +12,12 @@ class TracksController < ApplicationController
   end
 
   def update
-    authorize @track
-    if @track.save
-      redirect_to track_path(@track)
-    else
-      render "index"
-    end
+    # authorize @track
+    # if @track.save
+    #   redirect_to track_path(@track)
+    # else
+    #   render "index"
+    # end
   end
 
   def create

@@ -12,9 +12,22 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body class="preload">
+  <body>
     <%= render 'shared/flashes' %>
+    <%= render 'shared/navbar', is_home: params[:action] == 'home' %>
 
-    <%= yield %>
+    <% if params[:action] == 'home' %>
+      <%= yield %>
+    <% else %>
+      <div class="dashboard-container">
+        <div class="dashboard-sidebar">
+          <%= render 'shared/sidebar', tab: sidebar_active_link(params) %>
+        </div>
+        <div class="dashboard-main">
+          <%= render 'shared/back_btn' %>
+          <%= yield %>
+        </div>
+      </div>
+    <% end %>
   </body>
 </html>
