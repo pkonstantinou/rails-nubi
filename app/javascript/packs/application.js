@@ -23,9 +23,10 @@ require("channels");
 // External imports
 import "bootstrap";
 
-// Internal imports
-import { initTransitions } from "../components/initTransitions";
+// Internal imports, e.g:
+// import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener("turbolinks:load", () => {
-  initTransitions();
+  // Call your functions here, e.g:
+  // initSelect2();
 });
