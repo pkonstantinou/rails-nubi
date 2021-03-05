@@ -26,16 +26,13 @@
 
   &:focus {
     box-shadow: none;
+    background-color: $theme-color3;
+    outline: none;
   }
 
   &:hover {
     background-color: $theme-color4;
   }
-}
-
-.btn-secondary:focus {
-  border: none;
-  outline: none !important;
 }
 
 .btn-dashboard-1 {

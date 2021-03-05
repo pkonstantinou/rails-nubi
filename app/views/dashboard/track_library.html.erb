@@ -13,8 +13,8 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for(@track) do |f| %>
-          <%= f.input :title, input_html: { maxlength: '28'}, label: false %>
-          <%= f.button :submit, "Save track", id: 'create-text', class: 'btn-secondary' %>
+          <%= f.input :title, input_html: { maxlength: '28' }, label: false %>
+          <%= f.button :submit, "Save track", id: 'submit', class: 'btn-secondary', disabled: true %>
         <% end %>
       </div>
     </div>
