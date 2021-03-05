@@ -1,3 +1,5 @@
+require "open-uri"
+
 p 'Seeding started...'
 
 u1 = User.new(email: 'u1@mail.com', password: '123456')
@@ -21,6 +23,10 @@ t5.user = u2
 step1 = Step.new(title: 'Introduction', content_type: 'text')
 step1.track = t1
 step1.save
+
+file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+step1.media.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+
 step2 = Step.new(title: 'Company policy explained', content_type: 'video')
 step2.track = t1
 step2.save
