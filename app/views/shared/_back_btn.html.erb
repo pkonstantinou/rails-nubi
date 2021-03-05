@@ -1,5 +1,5 @@
-<% if params[:controller] != 'dashboard' %>
-  <%= link_to back_button_path(params), class: 'btn-back' do %>
+<% unless back_button_path(params).nil? %>
+  <%= link_to back_button_path(params), class: 'btn-dashboard-1 btn-back' do %>
     <i class="fas fa-long-arrow-alt-left"></i>
   <% end %>
 <% end %>

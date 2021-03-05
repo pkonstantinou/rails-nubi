@@ -1,5 +1,5 @@
 <!-- Button for Modal -->
-<button type="button" class="btn btn-primary my-3" data-toggle="modal" data-target="#exampleModal">Create track</button>
+<button class="btn-secondary mb-3" data-toggle="modal" data-target="#exampleModal">Create track</button>
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -13,8 +13,8 @@
       </div>
       <div class="modal-body">
         <%= simple_form_for(@track) do |f| %>
-          <%= f.input :title, input_html: { maxlength: '28'}, label: false %>
-          <%= f.button :submit, "Save track", id: 'create-text' %>
+          <%= f.input :title, input_html: { maxlength: '28' }, label: false %>
+          <%= f.button :submit, "Save track", id: 'submit', class: 'btn-secondary' %>
         <% end %>
       </div>
     </div>
