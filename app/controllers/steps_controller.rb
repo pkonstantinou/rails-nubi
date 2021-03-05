@@ -18,7 +18,7 @@ class StepsController < ApplicationController
     @step.media.purge if @step.media.attached?
     @step.destroy
 
-    render "tracks/edit"
+    redirect_to edit_track_path(@track)
   end
 
   private
