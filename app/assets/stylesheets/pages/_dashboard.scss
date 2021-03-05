@@ -11,6 +11,11 @@
   position: relative;
   background-color: $white;
   overflow-y: scroll;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 
 .dashboard-sidebar {
