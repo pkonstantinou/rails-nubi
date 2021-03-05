@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get '/dashboard/profile', to: 'dashboard#profile'
   get '/dashboard/settings', to: 'dashboard#settings'
 
-  resources :tracks, except: %i[show] do
+  resources :tracks, except: %i[index show] do
     resources :steps, only: %i[create destroy]
   end
   # resources :steps, only: %i[create]
