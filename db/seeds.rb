@@ -9,7 +9,7 @@ u1.save
 
 u2 = User.new(email: 'paschalis@nubiapp.co', password: '123456')
 u2.first_name = 'Paschalis'
-u1.last_name = 'Konstantinou'
+u2.last_name = 'Konstantinou'
 u2.manager = u1
 u2.save
 
@@ -24,17 +24,17 @@ t4.user = u2
 t5 = Track.new(title: 'Sales strategy')
 t5.user = u2
 
-step1 = Step.new(title: 'Code of conduct', content_type: 'PDF')
-step1.track = t1
-file1 = URI.open('https://www.total.com/sites/g/files/nytnzq111/files/atoms/files/code_de_conduite_en_0.pdf')
-step1.media.attach(io: file1, filename: 'total.pdf', content_type: 'total/pdf')
-step1.save!
+# step1 = Step.new(title: 'Code of conduct', content_type: 'PDF')
+# step1.track = t1
+# file1 = URI.open('https://www.total.com/sites/g/files/nytnzq111/files/atoms/files/code_de_conduite_en_0.pdf')
+# step1.media.attach(io: file1, filename: 'total.pdf', content_type: 'total/pdf')
+# step1.save!
 
-step2 = Step.new(title: 'Safety introduction', content_type: 'Video')
-step2.track = t1
-file2 = URI.open('https://total-mc29-videos-pad.damdy.com/mc29/20170427-161047-6385a00d/media_mp4_HD_1080p_5.mp4')
-step2.media.attach(io: file2, filename: 'video.mp4', content_type: 'video/mp4')
-step2.save!
+# step2 = Step.new(title: 'Safety introduction', content_type: 'Video')
+# step2.track = t1
+# file2 = URI.open('https://total-mc29-videos-pad.damdy.com/mc29/20170427-161047-6385a00d/media_mp4_HD_1080p_5.mp4')
+# step2.media.attach(io: file2, filename: 'video.mp4', content_type: 'video/mp4')
+# step2.save!
 
 # step3 = Step.new(title: 'Team introduction', content_type: 'Image')
 # step3.track = t1
