@@ -5,6 +5,7 @@ p 'Seeding started...'
 u1 = User.new(email: 'tom@nubiapp.co', password: '123456')
 u1.first_name = 'Tom'
 u1.last_name = 'Louwagie'
+u1.is_manager = true;
 u1.save
 
 u2 = User.new(email: 'paschalis@nubiapp.co', password: '123456')
