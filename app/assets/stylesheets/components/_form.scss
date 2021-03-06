@@ -1,0 +1,50 @@
+.form-signup,
+.form-login {
+  padding: 1.5rem 2.5rem;
+  border-radius: 10px;
+  background-color: $theme-purple-1;
+  color: $white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: $white;
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+
+  input {
+    background-color: $theme-purple-1;
+    color: $white;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  input:focus {
+    background-color: $theme-purple-1;
+    color: $white;
+    box-shadow: none;
+    border: 1px solid $white;
+    outline-offset: -2px;
+  }
+
+  small {
+    color: rgba(255, 255, 255, 0.6) !important;
+  }
+
+  input.btn {
+    margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  input.btn:hover {
+    color: $white;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}

@@ -9,7 +9,6 @@
   width: calc(100vw - 5rem);
   padding: 2rem;
   position: relative;
-  background-color: $white;
   overflow-y: scroll;
 
   p {
@@ -20,7 +19,7 @@
 
 .dashboard-sidebar {
   width: 5rem;
-  background-color: $theme-color2;
+  background-color: $theme-purple-2;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
