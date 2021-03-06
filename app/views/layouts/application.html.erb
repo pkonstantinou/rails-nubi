@@ -16,9 +16,7 @@
     <%= render 'shared/flashes' %>
     <%= render 'shared/navbar', is_home: params[:action] == 'home' %>
 
-    <% if params[:action] == 'home' %>
-      <%= yield %>
-    <% else %>
+    <% if dashboard_view?(params) %>
       <div class="dashboard-container">
         <div class="dashboard-sidebar">
           <%= render 'shared/sidebar', tab: sidebar_active_link(params) %>
@@ -28,6 +26,8 @@
           <%= yield %>
         </div>
       </div>
+      <% else %>
+      <%= yield %>
     <% end %>
   </body>
 </html>
