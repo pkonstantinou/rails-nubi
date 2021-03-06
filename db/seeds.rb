@@ -2,10 +2,14 @@ require "open-uri"
 
 p 'Seeding started...'
 
-u1 = User.new(email: 'u1@mail.com', password: '123456')
+u1 = User.new(email: 'tom@nubiapp.co', password: '123456')
+u1.first_name = 'Tom'
+u1.last_name = 'Louwagie'
 u1.save
 
-u2 = User.new(email: 'u2@mail.com', password: '123456')
+u2 = User.new(email: 'paschalis@nubiapp.co', password: '123456')
+u2.first_name = 'Paschalis'
+u1.last_name = 'Konstantinou'
 u2.manager = u1
 u2.save
 
@@ -28,7 +32,7 @@ step1.save!
 
 step2 = Step.new(title: 'Safety introduction', content_type: 'Video')
 step2.track = t1
-file2= URI.open('https://total-mc29-videos-pad.damdy.com/mc29/20170427-161047-6385a00d/media_mp4_HD_1080p_5.mp4')
+file2 = URI.open('https://total-mc29-videos-pad.damdy.com/mc29/20170427-161047-6385a00d/media_mp4_HD_1080p_5.mp4')
 step2.media.attach(io: file2, filename: 'video.mp4', content_type: 'video/mp4')
 step2.save!
 
