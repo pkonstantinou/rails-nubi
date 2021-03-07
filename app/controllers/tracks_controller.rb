@@ -21,7 +21,8 @@ class TracksController < ApplicationController
   end
 
   def create
-    authorize @track = Track.new(track_params)
+    @track = Track.new(track_params)
+    authorize @track
     @tracks = policy_scope(Track)
     @track.user = current_user
     if @track.save

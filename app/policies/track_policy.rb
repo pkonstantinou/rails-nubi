@@ -10,7 +10,7 @@ class TrackPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.is_manager
   end
 
   def destroy?
@@ -18,8 +18,7 @@ class TrackPolicy < ApplicationPolicy
   end
 
   def update?
-    true
     # For some reason record.user == user is not working, record does not have method user?
-    # record.user == user
+    record.user == user
   end
 end

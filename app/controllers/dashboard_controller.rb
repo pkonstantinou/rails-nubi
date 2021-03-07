@@ -4,12 +4,16 @@ class DashboardController < ApplicationController
     @track = Track.new
 
     # The line below is a reminder so that we remember how to authorize
-    # a signle instance of another model within the dashboard.
+    # a single instance of another model within the dashboard.
     # authorize @track, :show?, policy_scope_class: TrackPolicy
   end
 
   def track_library
-    @tracks = policy_scope(Track, policy_scope_class: TrackPolicy::Scope)
+    if current_user.is_manager?
+      @tracks = policy_scope(Track, policy_scope_class: TrackPolicy::Scope)
+    else
+      authorize self
+    end
     @track = Track.new
   end
 
