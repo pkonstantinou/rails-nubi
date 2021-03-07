@@ -18,7 +18,6 @@ class TrackPolicy < ApplicationPolicy
   end
 
   def update?
-    # For some reason record.user == user is not working, record does not have method user?
     record.user == user
   end
 end

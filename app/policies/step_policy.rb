@@ -5,18 +5,15 @@ class StepPolicy < ApplicationPolicy
     end
   end
 
-  def destroy?
-    true
-    # record.user == user
+  def create?
+    record.track.user = user
   end
 
-  def create?
-    true
-    # record.user == user
+  def destroy?
+    record.track.user = user
   end
 
   def edit?
-    true
-    # record.user == user
+    record.track.user = user
   end
 end
