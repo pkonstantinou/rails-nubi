@@ -9,7 +9,7 @@ class DashboardController < ApplicationController
   end
 
   def track_library
-    if current_user.is_manager?
+    if current_user.manager?
       @tracks = policy_scope(Track, policy_scope_class: TrackPolicy::Scope)
     else
       authorize self

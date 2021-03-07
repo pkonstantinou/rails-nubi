@@ -6,7 +6,7 @@
       <% end %>
       <div class="nav-label">My Tracks</div>
     </li>
-    <% if current_user.is_manager? %>
+    <% if current_user.manager? %>
     <li class="nav-item">
       <%= link_to dashboard_track_library_path, class: "nav-link #{tab == 'track-library' ? 'active' : ''}" do %>
         <i class="fab fa-hive"></i>
