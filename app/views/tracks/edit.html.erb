@@ -35,13 +35,11 @@
         </button>
       </div>
       <div class="modal-body">
-      <% if policy(Step).create? %>
-        <%= simple_form_for [@track, @step] do |f| %>
-          <%= f.input :title, input_html: { maxlength: '18' } %>
-          <%= f.input :content_type, collection: ['PDF', 'Image', 'Video'], selected: 'PDF' %>
-          <%= f.input :media, as: :file %>
-          <%= f.button :submit, 'Add', class: 'btn-secondary' %>
-        <% end %>
+      <%= simple_form_for [@track, @step] do |f| %>
+        <%= f.input :title, input_html: { maxlength: '18' } %>
+        <%= f.input :content_type, collection: ['PDF', 'Image', 'Video'], selected: 'PDF' %>
+        <%= f.input :media, as: :file %>
+        <%= f.button :submit, 'Add', class: 'btn-secondary' %>
       <% end %>
       </div>
     </div>

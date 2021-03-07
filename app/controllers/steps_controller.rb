@@ -2,9 +2,11 @@ class StepsController < ApplicationController
   before_action :set_step, only: %i[destroy]
 
   def create
-    authorize @step = Step.new(step_params)
+    @step = Step.new(step_params)
     @track = Track.find(params[:track_id])
     @step.track = @track
+    authorize @step
+
     if @step.save
       redirect_to edit_track_path(@track)
     else
