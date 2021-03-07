@@ -6,12 +6,14 @@
       <% end %>
       <div class="nav-label">My Tracks</div>
     </li>
+    <% if current_user.is_manager? %>
     <li class="nav-item">
       <%= link_to dashboard_track_library_path, class: "nav-link #{tab == 'track-library' ? 'active' : ''}" do %>
         <i class="fab fa-hive"></i>
       <% end %>
       <div class="nav-label">Track Library</div>
     </li>
+    <% end %>
     <li class="nav-item">
       <%= link_to dashboard_team_path, class: "nav-link #{tab == 'team' ? 'active' : ''}" do %>
         <i class="fas fa-users"></i>
