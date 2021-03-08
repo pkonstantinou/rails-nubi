@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :tracks, except: %i[index show] do
     resources :steps, only: %i[create destroy]
+    resources :assignments, only: %i[create]
   end
   # resources :steps, only: %i[create]
 end

@@ -14,6 +14,12 @@ u2.last_name = 'Konstantinou'
 u2.manager = u1
 u2.save
 
+u3 = User.new(email: 'thilo@nubiapp.co', password: '123456')
+u3.first_name = 'Thilo'
+u3.last_name = 'Rudat'
+u3.manager = u1
+u3.save
+
 t1 = Track.new(title: 'New employee training')
 t1.user = u1
 t2 = Track.new(title: 'Junior Software Engineer')
