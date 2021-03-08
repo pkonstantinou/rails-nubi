@@ -11,7 +11,7 @@
         <% else %>
           <p>No file attached</p>
         <% end %>
-        <%= link_to track_step_path(@track, step), class: "link-styling", method: :delete, data: {confirm: 'Are you sure?'} do %>
+        <%= link_to track_step_path(@track, step), class: "delete-styling", method: :delete, data: {confirm: 'Are you sure?'} do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
