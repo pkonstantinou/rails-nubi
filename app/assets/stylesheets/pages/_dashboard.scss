@@ -11,6 +11,10 @@
   position: relative;
   overflow-y: scroll;
 
+  h2 {
+    color: $medium-gray;
+  }
+
   p {
     margin-top: 0;
     margin-bottom: 0;
@@ -19,7 +23,7 @@
 
 .dashboard-sidebar {
   width: 5rem;
-  background-color: $theme-purple-2;
+  background-color: $theme-purple-1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -126,4 +130,11 @@
 
 .btn-add-step {
   cursor: pointer;
+}
+
+.my-tracks__ready {
+  text-align: center;
+  margin: 2rem 0rem;
+  color: $medium-gray;
+  font-weight: 300;
 }
