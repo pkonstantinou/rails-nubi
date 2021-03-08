@@ -1,6 +1,8 @@
 <h2 class="text-center">My Tracks</h2>
 
-<div class="container my-5">
+<h5 class="my-tracks__ready">Ready to jump back in, <%= current_user.first_name %>?</h5>
+
+<div class="container">
   <div class="row">
     <% @assignments.each do |assignment| %>
     <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
