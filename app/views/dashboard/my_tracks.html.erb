@@ -1,1 +1,24 @@
 <h2 class="text-center">My Tracks</h2>
+
+<div class="container my-5">
+  <div class="row">
+    <% 4.times do %>
+    <% @assignments.each do |assignment| %>
+    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+      <div class="track-card mb-3">
+        <h3><%= assignment.track.title %></h3>
+        <div class="track-card__score">
+        <% if assignment.completed? %>
+          <i class="far fa-check-circle completed"></i>
+          <span>All steps completed</span>
+        <% else %>
+          <i class="far fa-circle"></i>
+          <span><%= "#{assignment.num_of_steps_completed}/#{assignment.num_of_steps} steps completed" %></span>
+        <% end %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>

@@ -98,4 +98,13 @@ a1.track.steps.each do |step|
   StepScore.create(assignment: a1, step: step)
 end
 
+a2 = Assignment.new
+a2.track = t2
+a2.user = u2
+a2.save
+
+a2.track.steps.each do |step|
+  StepScore.create(assignment: a2, step: step)
+end
+
 p 'Seeding ended...'
