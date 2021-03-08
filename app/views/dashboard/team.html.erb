@@ -1,1 +1,8 @@
-<h2 class="text-center">Team</h2>
+<h2 class="text-center"><%= @manager.first_name %>'s team</h2>
+
+<% @team.each do |team_member| %>
+  <strong><%= team_member.first_name %> </strong>
+  <% team_member.assignments.each do |assignment| %>
+    <p><%=  assignment.track.title %></p>
+  <% end %>
+<% end %>

@@ -11,7 +11,7 @@
       <div class="modal-body">
         <%= simple_form_for [track, Assignment.new] do |f| %>
           <%# TODO: dropdown should not display user who already have this track assigned %>
-          <%= f.association :user, collection: @employees_of_manager, label_method: :first_name, label: false %>
+          <%= f.association :user, collection: @employees_of_manager, label_method: :first_name, label: false, selected: @employees_of_manager.first %>
           <%= f.button :submit, "Assign", id: 'submit', class: 'btn-secondary' %>
         <% end %>
       </div>
