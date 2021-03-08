@@ -8,7 +8,6 @@ class TracksController < ApplicationController
 
   def edit
     authorize @track
-    @step = Step.new
   end
 
   def update

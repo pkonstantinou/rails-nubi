@@ -9,6 +9,8 @@ class DashboardController < ApplicationController
   end
 
   def track_library
+    # TODO: make users only the team members of the manager
+    @users = User.all
     if current_user.is_manager?
       @tracks = policy_scope(Track, policy_scope_class: TrackPolicy::Scope)
     else

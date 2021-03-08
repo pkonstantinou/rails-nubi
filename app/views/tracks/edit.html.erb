@@ -23,7 +23,6 @@
   </a>
 </div>
 
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -35,7 +34,7 @@
         </button>
       </div>
       <div class="modal-body">
-      <%= simple_form_for [@track, @step] do |f| %>
+      <%= simple_form_for [@track, Step.new] do |f| %>
         <%= f.input :title, input_html: { maxlength: '18' } %>
         <%= f.input :content_type, collection: ['PDF', 'Image', 'Video'], selected: 'PDF' %>
         <%= f.input :media, as: :file %>
