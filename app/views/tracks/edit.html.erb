@@ -34,13 +34,8 @@
         </button>
       </div>
       <div class="modal-body">
-<<<<<<< HEAD
-      <%= simple_form_for [@track, Step.new] do |f| %>
-        <%= f.input :title, input_html: { maxlength: '18' } %>
-=======
       <%= simple_form_for [@track, @step] do |f| %>
         <%= f.input :title, input_html: { maxlength: '30' } %>
->>>>>>> master
         <%= f.input :content_type, collection: ['PDF', 'Image', 'Video'], selected: 'PDF' %>
         <%= f.input :media, as: :file %>
         <%= f.button :submit, 'Add', class: 'btn-secondary' %>
