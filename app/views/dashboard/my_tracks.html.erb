@@ -4,7 +4,7 @@
   <div class="row">
     <% @assignments.each do |assignment| %>
     <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
-      <%= link_to '/tracks' do %>
+      <%= link_to dashboard_my_tracks_path do %>
       <div class="track-card mb-3">
         <h3><%= assignment.track.title %></h3>
         <div class="track-card__score">
