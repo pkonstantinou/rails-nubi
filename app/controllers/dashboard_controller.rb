@@ -4,6 +4,7 @@ class DashboardController < ApplicationController
   end
 
   def track_library
+    @employees_of_manager = User.where(user_id: current_user)
     if current_user.is_manager?
       @tracks = policy_scope(Track, policy_scope_class: TrackPolicy::Scope)
     else

@@ -4,4 +4,8 @@ class AssignmentPolicy < ApplicationPolicy
       scope.where(user: user)
     end
   end
+
+  def create?
+    user.is_manager
+  end
 end

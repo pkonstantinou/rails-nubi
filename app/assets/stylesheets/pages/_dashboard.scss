@@ -109,6 +109,21 @@
   color: rgb(80, 80, 80);
 }
 
+.delete-styling {
+  color: lightgray;
+}
+
+.delete-styling:hover {
+  text-decoration: none;
+  color: rgb(80, 80, 80);
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 0px;
+  right: 4px;
+}
+
 .btn-back {
   position: fixed;
 }
