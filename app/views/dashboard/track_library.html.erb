@@ -34,26 +34,7 @@
           <% end %>
           <!-- Button for assign track modal -->
           <button class="btn-secondary m-1" data-toggle="modal" data-target="#assignTrackModal">Assign</button>
-          <!-- Modal for assign track -->
-          <div class="modal fade" id="assignTrackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <strong class="modal-title" id="exampleModalLabel">Assign track to a team member</strong>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <%= simple_form_for [track, Assignment.new] do |f| %>
-                    <%# TODO: dropdown should not display user who already have this track assigned %>
-                    <%= f.association :user, collection: User.where(user_id: current_user), label_method: :first_name, label: false %>
-                    <%= f.button :submit, "Assign", id: 'submit', class: 'btn-secondary' %>
-                  <% end %>
-                </div>
-              </div>
-            </div>
-          </div>
+          <%= render 'assign_track_modal', track: track %>
         </div>
       </div>
     </div>
@@ -68,6 +49,9 @@
         <div class="card-body d-flex flex-column justify-content-between align-items-center">
           <strong><%= track.title %></strong>
           <p>Contains <%= track.steps.count %> steps</p>
+          <!-- Button for assign track modal -->
+          <button class="btn-secondary m-1" data-toggle="modal" data-target="#assignTrackModal">Assign</button>
+          <%= render 'assign_track_modal', track: track %>
         </div>
       </div>
     </div>

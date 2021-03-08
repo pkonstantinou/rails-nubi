@@ -5,9 +5,9 @@ class AssignmentsController < ApplicationController
     @assignment.user = User.find(assignment_params[:user_id])
     @assignment.track = Track.find(params[:track_id])
 
-    # a1.track.steps.each do |step|
-    #   StepScore.create(assignment: a1, step: step)
-    # end
+    @assignment.track.steps.each do |step|
+      StepScore.create(assignment: @assignment, step: step)
+    end
 
     if @assignment.save
       redirect_to dashboard_track_library_path
