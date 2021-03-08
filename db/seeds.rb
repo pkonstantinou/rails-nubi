@@ -5,7 +5,7 @@ p 'Seeding started...'
 u1 = User.new(email: 'tom@nubiapp.co', password: '123456')
 u1.first_name = 'Tom'
 u1.last_name = 'Louwagie'
-u1.is_manager = true;
+u1.is_manager = true
 u1.save
 
 u2 = User.new(email: 'paschalis@nubiapp.co', password: '123456')
@@ -31,23 +31,23 @@ t4.user = u2
 t5 = Track.new(title: 'Sales strategy')
 t5.user = u2
 
-# step1 = Step.new(title: 'Code of conduct', content_type: 'PDF')
-# step1.track = t1
+step1 = Step.new(title: 'Code of conduct', content_type: 'PDF')
+step1.track = t1
 # file1 = URI.open('https://www.total.com/sites/g/files/nytnzq111/files/atoms/files/code_de_conduite_en_0.pdf')
 # step1.media.attach(io: file1, filename: 'total.pdf', content_type: 'total/pdf')
-# step1.save!
+step1.save!
 
-# step2 = Step.new(title: 'Safety introduction', content_type: 'Video')
-# step2.track = t1
+step2 = Step.new(title: 'Safety introduction', content_type: 'Video')
+step2.track = t1
 # file2 = URI.open('https://total-mc29-videos-pad.damdy.com/mc29/20170427-161047-6385a00d/media_mp4_HD_1080p_5.mp4')
 # step2.media.attach(io: file2, filename: 'video.mp4', content_type: 'video/mp4')
-# step2.save!
+step2.save!
 
-# step3 = Step.new(title: 'Team introduction', content_type: 'Image')
-# step3.track = t1
+step3 = Step.new(title: 'Team introduction', content_type: 'Image')
+step3.track = t1
 # file3= URI.open('https://www.achievers.com/blog/wp-content/uploads/2030/08/banner-42.jpg')
 # step3.media.attach(io: file3, filename: 'image.jpeg', content_type: 'image/jpeg')
-# step3.save!
+step3.save!
 
 step1 = Step.new(title: 'Team introduction', content_type: 'PDF')
 step1.track = t2
@@ -102,6 +102,15 @@ a1.save
 
 a1.track.steps.each do |step|
   StepScore.create(assignment: a1, step: step)
+end
+
+a2 = Assignment.new
+a2.track = t2
+a2.user = u2
+a2.save
+
+a2.track.steps.each do |step|
+  StepScore.create(assignment: a2, step: step)
 end
 
 p 'Seeding ended...'
