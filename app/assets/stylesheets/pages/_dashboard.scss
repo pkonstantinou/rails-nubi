@@ -150,9 +150,24 @@
 }
 
 .assignment-step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.assignment-step__score {
+  margin-right: 1rem;
+
+  i {
+    font-size: 2rem;
+    color: $theme-green-1;
+  }
+}
+
+.assignment-step__content {
   width: 300px;
   background-color: $white;
-  margin-bottom: 1rem;
   padding: 1rem 0.8rem;
   background-color: $white;
   border-radius: 8px;
@@ -175,7 +190,7 @@
     font-size: 1.2rem;
   }
 
-  .assignment-step__buttons {
+  .assignment-step__content__buttons {
     margin-top: 1.3rem;
   }
 }

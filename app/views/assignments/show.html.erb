@@ -3,15 +3,20 @@
   <div class="assignment-steps">
     <% @assignment.step_scores.order(created_at: :asc).each do |step_score| %>
       <div class="assignment-step">
-        <h3><%= step_score.step.title %></h3>
-        <%= media_icon step_score.step %>
-        <div class="assignment-step__buttons">
-          <% if step_score.step.media.attached? %>
-            <%= media_link_content step_score.step %>
-          <% end %>
-          <%= link_to assignment_step_score_path(@assignment, step_score), class: "btn-mark-as", method: :patch do %>
-            <%= step_score.completed_at.nil? ? "Mark as done" : "Mark as undone" %>
-          <% end %>
+        <div class="assignment-step__score">
+          <i class="far fa-dot-circle"></i>
+        </div>
+        <div class="assignment-step__content">
+          <h3><%= step_score.step.title %></h3>
+          <%= media_icon step_score.step %>
+          <div class="assignment-step__content__buttons">
+            <% if step_score.step.media.attached? %>
+              <%= media_link_content step_score.step %>
+            <% end %>
+            <%= link_to assignment_step_score_path(@assignment, step_score), class: "btn-mark-as", method: :patch do %>
+              <%= step_score.completed_at.nil? ? "Mark as done" : "Mark as undone" %>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>
