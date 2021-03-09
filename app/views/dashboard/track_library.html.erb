@@ -33,7 +33,7 @@
             <i class="fas fa-trash-alt"></i>
           <% end %>
           <!-- Button for assign track modal -->
-          <button class="btn-secondary m-1" data-toggle="modal" data-target="#assignTrackModal">Assign</button>
+          <button class="btn-secondary m-1" data-toggle="modal" data-target=<%= "#modal#{track.id}" %>>Assign</button>
           <%= render 'assign_track_modal', track: track %>
         </div>
       </div>
