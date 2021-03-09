@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<h4>Tracks you created</h4>
+<h5 class="tracks-library-title">Tracks you created</h5>
 <div class="row mb-3">
   <% @tracks.where(user: current_user).each do |track| %>
     <div class="col-12 col-md-6 col-lg-4">
@@ -41,7 +41,7 @@
   <% end %>
 </div>
 
-<h4>Tracks others created</h4>
+<h5 class="tracks-library-title">Tracks others created</h5>
 <div class="row mb-3">
   <% @tracks.where.not(user: current_user).each do |track| %>
     <div class="col-12 col-md-6 col-lg-4">
