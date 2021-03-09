@@ -149,6 +149,22 @@
   text-align: center;
 }
 
+.assignment-chart {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .chart-wrapper {
+    margin-top: 6rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: $medium-gray;
+  }
+}
+
 .assignment-steps {
   margin-top: 2rem;
   display: flex;
