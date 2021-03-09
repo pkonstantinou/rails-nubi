@@ -5,18 +5,21 @@ p 'Seeding started...'
 u1 = User.new(email: 'tom@nubiapp.co', password: '123456')
 u1.first_name = 'Tom'
 u1.last_name = 'Louwagie'
+u1.role = "Technical Project Manager"
 u1.is_manager = true
 u1.save
 
 u2 = User.new(email: 'paschalis@nubiapp.co', password: '123456')
 u2.first_name = 'Paschalis'
 u2.last_name = 'Konstantinou'
+u2.role = "Junior Backend Developer"
 u2.manager = u1
 u2.save
 
 u3 = User.new(email: 'thilo@nubiapp.co', password: '123456')
 u3.first_name = 'Thilo'
 u3.last_name = 'Rudat'
+u3.role = "Lead Designer"
 u3.manager = u1
 u3.save
 
