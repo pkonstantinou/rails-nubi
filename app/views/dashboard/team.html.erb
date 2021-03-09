@@ -1,0 +1,27 @@
+<!-- <h5 class="my-tracks__ready">Welcome to <%= @manager.first_name %>'s team</h5> -->
+
+<h5 class="my-tracks__ready">Team manager</h5>
+<div class="container" style="max-width: 900px;">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <div class="track-card mb-3" style.color="yellow">
+        <%= image_tag "#{@manager.first_name}.jpg", class: "avatar mb-2 mx-auto d-block", alt: "avatar" %>
+        <h3><%= @manager.first_name%> <%= @manager.last_name %></h3>
+        <p><%= @manager.role %> </p>
+      </div>
+    </div>
+  </div>
+
+  <h5 class="my-tracks__ready">Team members</h5>
+  <div class="row">
+    <% @team.each do |team_member| %>
+      <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+        <div class="track-card mb-3">
+          <%= image_tag "#{team_member.first_name}.jpg", class: "avatar mb-2 mx-auto d-block", alt: "avatar" %>
+          <h3><%= team_member.first_name%> <%= team_member.last_name %></h3>
+          <p><%= team_member.role %> </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

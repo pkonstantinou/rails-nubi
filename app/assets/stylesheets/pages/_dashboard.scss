@@ -102,7 +102,7 @@
 }
 
 .link-styling {
-  color: black;
+  color: $soft-gray;
 }
 
 .link-styling:hover {
@@ -131,6 +131,13 @@
 
 .btn-add-step {
   cursor: pointer;
+}
+
+.tracks-library-title {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  color: $medium-gray;
+  font-weight: 300;
 }
 
 .my-tracks__ready {

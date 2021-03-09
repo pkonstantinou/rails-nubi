@@ -6,7 +6,7 @@
   border-radius: 5px;
   padding: 5px;
   box-shadow: 0px 0px 2px;
-  color: $black;
+  color: $soft-gray;
 }
 
 .card.step-card {
@@ -46,6 +46,12 @@
     font-size: 1rem;
     font-weight: 600;
     color: $medium-gray;
+  }
+
+  p {
+    text-align: center;
+    font-size: 1rem;
+    color: $medium-gray; 
   }
 
   i {
