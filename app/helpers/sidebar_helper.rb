@@ -5,6 +5,7 @@ module SidebarHelper
     return 'team' if params[:controller] == 'dashboard' && params[:action] == 'team'
     return 'profile' if params[:controller] == 'dashboard' && params[:action] == 'profile'
     return 'settings' if params[:controller] == 'dashboard' && params[:action] == 'settings'
+    return 'my-tracks' if params[:controller] == 'assignments' && params[:action] == 'show'
     return 'track-library' if params[:controller] == 'tracks'
   end
 
@@ -14,6 +15,7 @@ module SidebarHelper
     return 'Team' if params[:controller] == 'dashboard' && params[:action] == 'team'
     return 'Profile' if params[:controller] == 'dashboard' && params[:action] == 'profile'
     return 'Settings' if params[:controller] == 'dashboard' && params[:action] == 'settings'
+    return 'My Tracks' if params[:controller] == 'assignments' && params[:action] == 'show'
     return 'Track Library' if params[:controller] == 'tracks'
   end
 end
