@@ -55,3 +55,36 @@
     font-size: 1.5rem;
   }
 }
+
+.btn-view-content {
+  background-color: $theme-green-1;
+  color: $white !important;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  transition: all 0.3s ease;
+  border: 2px solid $theme-green-1 !important;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $theme-green-2;
+    border-color: $theme-green-2 !important;
+  }
+}
+
+.btn-mark-as {
+  color: $theme-green-1 !important;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 2px solid $theme-green-1 !important;
+  border-radius: 5px;
+  padding: 0.3rem 0.5rem;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+
+  &:hover {
+    background-color: $theme-green-3;
+  }
+}

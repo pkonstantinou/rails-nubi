@@ -1,1 +1,17 @@
-<h3 class="text-center mt-3"><%= @assignment.track.title %></h3>
+<div class="container mt-3">
+  <h2 class="text-center"><%= @assignment.track.title %></h2>
+  <div class="assignment-steps">
+    <% @assignment.step_scores.each do |step_score| %>
+      <div class="assignment-step">
+        <h3><%= step_score.step.title %></h3>
+        <%= media_icon step_score.step %>
+        <div class="assignment-step__buttons">
+          <% if step_score.step.media.attached? %>
+            <%= media_link_content step_score.step %>
+          <% end %>
+          <a href="" class="btn-mark-as">Mark as done</a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
