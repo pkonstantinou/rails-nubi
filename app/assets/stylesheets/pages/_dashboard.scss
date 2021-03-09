@@ -166,10 +166,20 @@
 
 .assignment-step__score {
   margin-right: 1rem;
+  position: relative;
 
   i {
     font-size: 2rem;
     color: $theme-green-1;
+  }
+
+  .assignment-step__score__link {
+    width: 3px;
+    height: 110px;
+    background-color: $theme-green-1;
+    position: absolute;
+    left: 14.5px;
+    top: 30px;
   }
 }
 

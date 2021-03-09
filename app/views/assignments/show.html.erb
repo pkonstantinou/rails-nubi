@@ -1,10 +1,13 @@
 <div class="container mt-3">
   <h2 class="text-center"><%= @assignment.track.title %></h2>
   <div class="assignment-steps">
-    <% @assignment.step_scores.order(created_at: :asc).each do |step_score| %>
+    <% @assignment.step_scores.order(created_at: :asc).each_with_index do |step_score, index| %>
       <div class="assignment-step">
         <div class="assignment-step__score">
-          <i class="far fa-dot-circle"></i>
+          <i class="far fa-<%= step_score.completed_at.nil? ? "" : "dot-" %>circle"></i>
+          <% unless index == (@assignment.step_scores.length - 1) || step_score.completed_at.nil? %>
+            <div class="assignment-step__score__link"></div>
+          <% end %>
         </div>
         <div class="assignment-step__content">
           <h3><%= step_score.step.title %></h3>
