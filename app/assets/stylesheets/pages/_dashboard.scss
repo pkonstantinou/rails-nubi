@@ -149,6 +149,14 @@
   text-align: center;
 }
 
+.assignment-container {
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+}
+
 .assignment-chart {
   width: 40%;
   display: flex;
@@ -158,6 +166,10 @@
   .chart-wrapper {
     margin-top: 6rem;
     margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      margin-top: 4rem;
+    }
   }
 
   p {
