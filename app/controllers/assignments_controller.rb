@@ -1,5 +1,5 @@
 class AssignmentsController < ApplicationController
-  before_action :set_assignment, only: %i[show]
+  before_action :set_assignment, only: %i[show destroy]
 
   def show
   end
@@ -16,6 +16,11 @@ class AssignmentsController < ApplicationController
     else
       render "/dashboard/track-library"
     end
+  end
+
+  def destroy
+    @assignment.destroy
+    redirect_to dashboard_settings_path
   end
 
   private

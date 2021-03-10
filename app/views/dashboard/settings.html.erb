@@ -1,0 +1,3 @@
+<div class="container">
+  <%= button_to 'Delete last assignment', assignment_path(Assignment.last), method: :delete, data: {confirm: 'Are you sure?'} %>
+</div>
