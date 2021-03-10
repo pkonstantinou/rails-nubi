@@ -12,5 +12,8 @@ Rails.application.routes.draw do
     resources :steps, only: %i[create destroy]
     resources :assignments, only: %i[create]
   end
-  # resources :steps, only: %i[create]
+
+  resources :assignments, only: %i[show] do
+    resources :step_scores, only: %i[update]
+  end
 end

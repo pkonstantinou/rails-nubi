@@ -1,7 +1,7 @@
 class Assignment < ApplicationRecord
   belongs_to :user
   belongs_to :track
-  has_many :step_scores
+  has_many :step_scores, dependent: :destroy
 
   def completed?
     num_of_steps == num_of_steps_completed

@@ -5,6 +5,10 @@ class AssignmentPolicy < ApplicationPolicy
     end
   end
 
+  def show?
+    record.user = user
+  end
+
   def create?
     user.is_manager
   end

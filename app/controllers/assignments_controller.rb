@@ -1,4 +1,9 @@
 class AssignmentsController < ApplicationController
+  before_action :set_assignment, only: %i[show]
+
+  def show
+  end
+
   def create
     authorize @assignment = Assignment.new
     @assignment.user = User.find(assignment_params[:user_id])
@@ -14,6 +19,11 @@ class AssignmentsController < ApplicationController
   end
 
   private
+
+  def set_assignment
+    @assignment = Assignment.find(params[:id])
+    authorize @assignment
+  end
 
   def assignment_params
     params.require(:assignment).permit(:user_id)
