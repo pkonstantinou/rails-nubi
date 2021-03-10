@@ -9,13 +9,6 @@ u1.role = 'Technical Project Manager'
 u1.is_manager = true
 u1.save
 
-u2 = User.new(email: 'paschalis@nubiapp.co', password: '123456')
-u2.first_name = 'Paschalis'
-u2.last_name = 'Konstantinou'
-u2.role = 'Backend Developer'
-u2.manager = u1
-u2.save
-
 u3 = User.new(email: 'thilo@nubiapp.co', password: '123456')
 u3.first_name = 'Thilo'
 u3.last_name = 'Rudat'
@@ -23,11 +16,25 @@ u3.role = 'Lead Designer'
 u3.manager = u1
 u3.save
 
-u4 = User.new(email: 'marc@nubiapp.co', password: '123456')
-u4.first_name = 'Marc'
-u4.last_name = 'Andreessen'
-u4.role = 'CEO'
+u2 = User.new(email: 'paschalis@nubiapp.co', password: '123456')
+u2.first_name = 'Paschalis'
+u2.last_name = 'Konstantinou'
+u2.role = 'Backend Software Engineer'
+u2.manager = u1
+u2.save
+
+u4 = User.new(email: 'alex@nubiapp.co', password: '123456')
+u4.first_name = 'Alex'
+u4.last_name = 'Cooper'
+u4.role = 'Frontend Developer'
+u4.manager = u1
 u4.save
+
+u5 = User.new(email: 'marc@nubiapp.co', password: '123456')
+u5.first_name = 'Marc'
+u5.last_name = 'Andreessen'
+u5.role = 'CEO'
+u5.save
 
 t1 = Track.new(title: 'New employee training')
 t1.user = u1
