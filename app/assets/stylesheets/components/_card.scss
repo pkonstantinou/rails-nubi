@@ -53,7 +53,8 @@
   p {
     text-align: center;
     font-size: 1rem;
-    color: $medium-gray; 
+    font-weight: 300;
+    color: $soft-gray;
   }
 
   i {
@@ -83,17 +84,17 @@
   }
 
   .fa-trash-alt {
-    color: lightgray;
+    color: #c0c0c0;
   }
-  
+
   .fa-trash-alt:hover {
     text-decoration: none;
-    color: rgb(80, 80, 80);
+    color: rgb(206, 98, 98);
   }
 
   .delete-icon {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    bottom: 15px;
+    right: 15px;
   }
 }
