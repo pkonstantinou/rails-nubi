@@ -12,7 +12,7 @@ u1.save
 u2 = User.new(email: 'paschalis@nubiapp.co', password: '123456')
 u2.first_name = 'Paschalis'
 u2.last_name = 'Konstantinou'
-u2.role = 'Junior Backend Developer'
+u2.role = 'Backend Developer'
 u2.manager = u1
 u2.save
 
@@ -32,7 +32,7 @@ u4.save
 t1 = Track.new(title: 'New employee training')
 t1.user = u1
 
-t2 = Track.new(title: 'Junior Software Engineer')
+t2 = Track.new(title: 'Backend Software Engineer')
 t2.user = u1
 
 t3 = Track.new(title: 'New manager training')
@@ -53,26 +53,26 @@ t7.user = u1
 t8 = Track.new(title: 'Company strategy')
 t8.user = u4
 
-t9 = Track.new(title: 'Introduction to our Teck Stack')
+t9 = Track.new(title: 'Intro to our Tech Stack')
 t9.user = u1
 
-step1 = Step.new(title: 'Code of conduct', content_type: 'PDF')
-step1.track = t1
+# step1 = Step.new(title: 'Code of conduct', content_type: 'PDF')
+# step1.track = t1
 # file1 = URI.open('https://www.total.com/sites/g/files/nytnzq111/files/atoms/files/code_de_conduite_en_0.pdf')
 # step1.media.attach(io: file1, filename: 'total.pdf', content_type: 'total/pdf')
-step1.save!
+# step1.save!
 
-step2 = Step.new(title: 'Safety introduction', content_type: 'Video')
-step2.track = t1
+# step2 = Step.new(title: 'Safety introduction', content_type: 'Video')
+# step2.track = t1
 # file2 = URI.open('https://total-mc29-videos-pad.damdy.com/mc29/20170427-161047-6385a00d/media_mp4_HD_1080p_5.mp4')
 # step2.media.attach(io: file2, filename: 'video.mp4', content_type: 'video/mp4')
-step2.save!
+# step2.save!
 
-step3 = Step.new(title: 'Team introduction', content_type: 'Image')
-step3.track = t1
+# step3 = Step.new(title: 'Team introduction', content_type: 'Image')
+# step3.track = t1
 # file3= URI.open('https://www.romania-insider.com/sites/default/files/styles/article_large_image/public/2021-02/adobe_employees.jpg')
 # step3.media.attach(io: file3, filename: 'image.jpeg', content_type: 'image/jpeg')
-step3.save!
+# step3.save!
 
 step1 = Step.new(title: 'Team introduction', content_type: 'PDF')
 step1.track = t2
@@ -203,14 +203,14 @@ t6.save
 t7.save
 t8.save
 
-a1 = Assignment.new
-a1.track = t1
-a1.user = u2
-a1.save
+# a1 = Assignment.new
+# a1.track = t1
+# a1.user = u2
+# a1.save
 
-a1.track.steps.each do |step|
-  StepScore.create(assignment: a1, step: step)
-end
+# a1.track.steps.each do |step|
+#   StepScore.create(assignment: a1, step: step)
+# end
 
 a2 = Assignment.new
 a2.track = t2
@@ -244,13 +244,13 @@ a5.track.steps.each do |step|
   StepScore.create(assignment: a5, step: step)
 end
 
-a6 = Assignment.new
-a6.track = t4
-a6.user = u2
-a6.save
-a6.track.steps.each do |step|
-  StepScore.create(assignment: a6, step: step)
-end
+# a6 = Assignment.new
+# a6.track = t4
+# a6.user = u2
+# a6.save
+# a6.track.steps.each do |step|
+#   StepScore.create(assignment: a6, step: step)
+# end
 
 a7 = Assignment.new
 a7.track = t9

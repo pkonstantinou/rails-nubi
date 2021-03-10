@@ -9,7 +9,7 @@
             class: "avatar #{current_user == @manager ? "current" : ""}  mb-2 mx-auto d-block",
             alt: "avatar" %>
         <h3><%= @manager.first_name%> <%= @manager.last_name %></h3>
-        <p><%= @manager.role %> </p>
+        <p style="font-size: 0.8rem;"><%= @manager.role %> </p>
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@
               class: "avatar #{current_user == team_member ? "current" : ""} mb-2 mx-auto d-block",
               alt: "avatar" %>
           <h3><%= team_member.first_name%> <%= team_member.last_name %></h3>
-          <p><%= team_member.role %> </p>
+          <p style="font-size: 0.8rem;"><%= team_member.role %> </p>
         </div>
       </div>
     <% end %>
