@@ -3,9 +3,9 @@
   <div class="assignment-container d-flex">
     <div class="assignment-chart">
       <div class="chart-wrapper">
-        <canvas id="myChart"></canvas>
+        <canvas id="myChart" data-score=<%= assignment_score(@assignment) %>></canvas>
       </div>
-      <p>90% completed</p>
+      <p><%= assignment_score(@assignment) %>% completed</p>
     </div>
 
     <div class="assignment-steps">

@@ -14,9 +14,8 @@ const initChartjs = () => {
         datasets: [
           {
             backgroundColor: ["#7acab0", "#e3e2f0"],
-            borderColor: ["#7acab0", "#e3e2f0"],
-            data: [90, 10],
-            weight: 1,
+            borderColor: ["transparent", "transparent"],
+            data: [ctx.dataset.score, 100 - ctx.dataset.score],
           },
         ],
       },
@@ -24,6 +23,9 @@ const initChartjs = () => {
       // Configuration options go here
       options: {
         legend: false,
+        animation: {
+          duration: 1500,
+        },
       },
     });
   }
