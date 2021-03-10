@@ -2,6 +2,7 @@
   <h2 class="text-center"><%= @assignment.track.title %></h2>
   <div class="assignment-container d-flex">
     <div class="assignment-chart">
+      <p class="assignment-chart__well-done <%= assignment_completed?(@assignment) ? "" : "hidden"%>">Well done!</p>
       <div class="chart-wrapper">
         <canvas id="myChart" data-score=<%= assignment_score(@assignment) %>></canvas>
       </div>

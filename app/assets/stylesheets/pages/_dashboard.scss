@@ -162,13 +162,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 4rem;
+
+  .assignment-chart__well-done {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+
+  .assignment-chart__well-done.hidden {
+    visibility: hidden;
+  }
 
   .chart-wrapper {
-    margin-top: 6rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
 
     @media (max-width: 768px) {
-      margin-top: 4rem;
+      margin-top: 2rem;
     }
   }
 
