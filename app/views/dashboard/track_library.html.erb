@@ -21,38 +21,34 @@
   </div>
 </div>
 
-<h5 class="tracks-library-title">Tracks you created</h5>
+<h5 class="my-tracks__ready">Tracks you created</h5>
 <div class="row mb-3">
   <% @tracks.where(user: current_user).each do |track| %>
-    <div class="col-12 col-md-6 col-lg-4">
-      <div class="card mb-3">
-        <div class="card-body d-flex flex-column justify-content-between align-items-center">
-          <strong><%= link_to track.title, edit_track_path(track), class: 'link-styling' %></strong>
-          <p>Contains <%= track.steps.count %> steps</p>
-          <%= link_to track_path(track), class: "delete-styling bottom-right", method: :delete, data: {confirm: 'Are you sure?'} do %>
-            <i class="fas fa-trash-alt"></i>
-          <% end %>
-          <!-- Button for assign track modal -->
-          <button class="btn-secondary m-1" data-toggle="modal" data-target=<%= "#modal#{track.id}" %>>Assign</button>
-          <%= render 'assign_track_modal', track: track %>
-        </div>
+    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+      <div class="track-card mb-3 d-flex flex-column align-items-center">
+        <h3><%= link_to track.title, edit_track_path(track), class: 'link-styling' %></h3>
+        <p>Contains <%= track.steps.count %> steps</p>
+        <!-- Button for assign track modal -->
+        <button class="btn-secondary mt-3" data-toggle="modal" data-target=<%= "#modal#{track.id}" %>>Assign</button>
+        <%= render 'assign_track_modal', track: track %>
+        <%= link_to track_path(track), class: 'delete-icon', method: :delete, data: {confirm: 'Are you sure?'} do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
       </div>
     </div>
   <% end %>
 </div>
 
-<h5 class="tracks-library-title">Tracks others created</h5>
+<h5 class="my-tracks__ready">Tracks others created</h5>
 <div class="row mb-3">
   <% @tracks.where.not(user: current_user).each do |track| %>
-    <div class="col-12 col-md-6 col-lg-4">
-      <div class="card mb-3">
-        <div class="card-body d-flex flex-column justify-content-between align-items-center">
-          <strong><%= track.title %></strong>
-          <p>Contains <%= track.steps.count %> steps</p>
-          <!-- Button for assign track modal -->
-          <button class="btn-secondary m-1" data-toggle="modal" data-target="#assignTrackModal">Assign</button>
-          <%= render 'assign_track_modal', track: track %>
-        </div>
+    <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
+      <div class="track-card mb-3 d-flex flex-column align-items-center">
+        <h3 class="link-styling"><%= track.title %></h3>
+        <p>Contains <%= track.steps.count %> steps</p>
+        <!-- Button for assign track modal -->
+        <button class="btn-secondary m-1" data-toggle="modal" data-target="#assignTrackModal">Assign</button>
+        <%= render 'assign_track_modal', track: track %>
       </div>
     </div>
   <% end %>
