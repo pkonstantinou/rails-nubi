@@ -36,7 +36,7 @@ t5.user = u2
 
 step1 = Step.new(title: 'Code of conduct', content_type: 'PDF')
 step1.track = t1
-# file1 = URI.open('https://www.total.com/sites/g/files/nytnzq111/files/atoms/files/code_de_conduite_en_0.pdf')
+# file1 = URI.open('https://www.adobe.com/content/dam/cc/en/corporate-responsibility/pdfs/code-of-conduct-ext.pdf')
 # step1.media.attach(io: file1, filename: 'total.pdf', content_type: 'total/pdf')
 step1.save!
 
@@ -48,7 +48,7 @@ step2.save!
 
 step3 = Step.new(title: 'Team introduction', content_type: 'Image')
 step3.track = t1
-# file3= URI.open('https://www.achievers.com/blog/wp-content/uploads/2030/08/banner-42.jpg')
+# file3= URI.open('https://www.romania-insider.com/sites/default/files/styles/article_large_image/public/2021-02/adobe_employees.jpg')
 # step3.media.attach(io: file3, filename: 'image.jpeg', content_type: 'image/jpeg')
 step3.save!
 
