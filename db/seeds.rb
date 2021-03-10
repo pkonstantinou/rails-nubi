@@ -48,10 +48,13 @@ t6 = Track.new(title: 'Executive coaching')
 t6.user = u4
 
 t7 = Track.new(title: 'Managing teams')
-t7.user = u4
+t7.user = u1
 
 t8 = Track.new(title: 'Company strategy')
 t8.user = u4
+
+t9 = Track.new(title: 'Introduction to our Teck Stack')
+t9.user = u1
 
 step1 = Step.new(title: 'Code of conduct', content_type: 'PDF')
 step1.track = t1
@@ -167,6 +170,30 @@ step3 = Step.new(title: 'Leading change efforts', content_type: 'Video')
 step3.track = t8
 step3.save
 
+step3 = Step.new(title: 'Leading change efforts', content_type: 'Video')
+step3.track = t4
+step3.save
+
+step3 = Step.new(title: 'Leading change efforts', content_type: 'Video')
+step3.track = t4
+step3.save
+
+step3 = Step.new(title: 'Leading change efforts', content_type: 'Video')
+step3.track = t9
+step3.save
+
+step3 = Step.new(title: 'Leading change efforts', content_type: 'Video')
+step3.track = t9
+step3.save
+
+step3 = Step.new(title: 'Leading change efforts', content_type: 'Video')
+step3.track = t9
+step3.save
+
+step3 = Step.new(title: 'Leading change efforts', content_type: 'Video')
+step3.track = t9
+step3.save
+
 t1.save
 t2.save
 t3.save
@@ -215,6 +242,22 @@ a5.user = u1
 a5.save
 a5.track.steps.each do |step|
   StepScore.create(assignment: a5, step: step)
+end
+
+a6 = Assignment.new
+a6.track = t4
+a6.user = u2
+a6.save
+a6.track.steps.each do |step|
+  StepScore.create(assignment: a6, step: step)
+end
+
+a7 = Assignment.new
+a7.track = t9
+a7.user = u2
+a7.save
+a7.track.steps.each do |step|
+  StepScore.create(assignment: a7, step: step)
 end
 
 p 'Seeding ended...'
