@@ -151,7 +151,7 @@
   margin-top: 4rem;
 
   @media (max-width: 768px) {
-    margin-top: 2rem;
+    margin-top: 0rem;
   }
 
   .assignment-chart__well-done {
@@ -208,7 +208,7 @@
 }
 
 .assignment-step__content {
-  width: 300px;
+  width: 330px;
   background-color: $white;
   padding: 1rem 0.8rem;
   background-color: $white;
