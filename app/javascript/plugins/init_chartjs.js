@@ -1,10 +1,12 @@
 import Chart from "chart.js";
 
+let chart;
+
 const initChartjs = () => {
-  var ctx = document.querySelector("#myChart");
+  const ctx = document.querySelector("#myChart");
 
   if (ctx) {
-    var chart = new Chart(ctx, {
+    chart = new Chart(ctx, {
       // The type of chart we want to create
       type: "doughnut",
 
@@ -31,4 +33,10 @@ const initChartjs = () => {
   }
 };
 
-export { initChartjs };
+const updateChart = (score) => {
+  chart.data.datasets[0].data[0] = score;
+  chart.data.datasets[0].data[1] = 100 - score;
+  chart.update();
+};
+
+export { initChartjs, updateChart };
