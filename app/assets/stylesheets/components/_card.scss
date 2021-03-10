@@ -7,6 +7,7 @@
   padding: 5px;
   box-shadow: 0px 0px 2px;
   color: $soft-gray;
+  position: relative;
 }
 
 .card.step-card {
@@ -36,6 +37,7 @@
   border-radius: 8px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease;
+  position: relative;
 
   &:hover {
     background-color: $theme-purple-4;
@@ -78,5 +80,20 @@
     margin-top: 1rem;
     font-size: 0.8rem;
     color: $soft-gray;
+  }
+
+  .fa-trash-alt {
+    color: lightgray;
+  }
+  
+  .fa-trash-alt:hover {
+    text-decoration: none;
+    color: rgb(80, 80, 80);
+  }
+
+  .delete-icon {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
   }
 }
