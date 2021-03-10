@@ -1,0 +1,31 @@
+.modal-content {
+  border-radius: 8px !important;
+  overflow: hidden;
+
+  .modal-header {
+    background-color: $theme-green-1;
+  }
+
+  button.close,
+  button.close:hover {
+    color: $white;
+    opacity: 1;
+  }
+
+  .modal-title {
+    color: $white;
+  }
+
+  #track_title,
+  #step_title,
+  #step_content_type {
+    box-shadow: none;
+    border: 1px solid $theme-green-1;
+  }
+
+  #track_title:focus,
+  #step_title:focus,
+  #step_content_type:focus {
+    border-width: 3px;
+  }
+}
