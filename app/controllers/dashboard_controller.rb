@@ -20,7 +20,7 @@ class DashboardController < ApplicationController
   def team
     authorize self
     @manager = current_user.is_manager? ? current_user : User.find(current_user.user_id)
-    @team = User.where(user_id: @manager)
+    @team = User.where(user_id: @manager).order(created_at: :asc)
   end
 
   def profile
