@@ -1,13 +1,13 @@
 <div class="container my-2" style="max-width: 900px;">
-  <!-- Button for create track Modal -->
-  <button class="btn-secondary mb-3" data-toggle="modal" data-target="#createTrackModal">Create track</button>
+  <!-- Button for create training Modal -->
+  <button class="btn-secondary mb-3" data-toggle="modal" data-target="#createTrackModal">Create training</button>
 
-  <!-- Modal for create track -->
+  <!-- Modal for create training -->
   <div class="modal fade" id="createTrackModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <strong class="modal-title" id="exampleModalLabel">Name your track</strong>
+          <strong class="modal-title" id="exampleModalLabel">Name your training</strong>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -15,21 +15,21 @@
         <div class="modal-body">
           <%= simple_form_for(@track) do |f| %>
             <%= f.input :title, input_html: { maxlength: '28' }, label: false %>
-            <%= f.button :submit, "Save track", id: 'submit', class: 'btn-secondary' %>
+            <%= f.button :submit, "Save training", id: 'submit', class: 'btn-secondary' %>
           <% end %>
         </div>
       </div>
     </div>
   </div>
 
-  <h5 class="my-tracks__ready">Tracks you created</h5>
+  <h5 class="my-tracks__ready">Trainings you created</h5>
   <div class="row mb-3">
     <% @tracks.where(user: current_user).each do |track| %>
       <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
         <div class="track-card mb-3 d-flex flex-column align-items-center">
           <h3><%= link_to track.title, edit_track_path(track), class: 'link-styling' %></h3>
           <p>Contains <%= track.steps.count %> steps</p>
-          <!-- Button for assign track modal -->
+          <!-- Button for assign training modal -->
           <button class="btn-secondary-outline mt-3" data-toggle="modal" data-target=<%= "#modal#{track.id}" %>>Assign</button>
           <%= render 'assign_track_modal', track: track %>
           <%= link_to track_path(track), class: 'delete-icon', method: :delete, data: {confirm: 'Are you sure?'} do %>
@@ -40,14 +40,14 @@
     <% end %>
   </div>
 
-  <h5 class="my-tracks__ready mt-5">Tracks others created</h5>
+  <h5 class="my-tracks__ready mt-5">Trainings others created</h5>
   <div class="row mb-3">
     <% @tracks.where.not(user: current_user).each do |track| %>
       <div class="col-12 col-md-6 col-lg-4 d-flex justify-content-center">
         <div class="track-card mb-3 d-flex flex-column align-items-center">
           <h3 class="link-styling"><%= track.title %></h3>
           <p>Contains <%= track.steps.count %> steps</p>
-          <!-- Button for assign track modal -->
+          <!-- Button for assign training modal -->
           <button class="btn-secondary-outline mt-3" data-toggle="modal" data-target="#assignTrackModal">Assign</button>
           <%= render 'assign_track_modal', track: track %>
         </div>
